@@ -3,13 +3,11 @@ var app = new Vue({
     data: {
         message: "",
         modified_message: "",
-        all_text: 
-            {
-            actual_text: "",
-            decrypt_text: ""
-        }
+        all_text: [],
 
-},
+        
+
+    },
     methods: {
         deCryptMessage() {
 
@@ -19,11 +17,10 @@ var app = new Vue({
             var translate = x => index(x) > -1 ? output[index(x)] : x;
             this.modified_message = this.message.split('').map(translate).join('');
 
-            this.all_text.actual_text = this.message;
-            console.log(this.all_text.actual_text );
-            this.all_text.decrypt_text = this.modified_message;
-            console.log(this.all_text.decrypt_text )
-
+            var newObj = {};
+            newObj.actual_text = this.message;
+            newObj.deCryptMessage = this.modified_message;
+            this.all_text.push(newObj);
 
             // console.log(this.all_text);
             // return this.modified_message

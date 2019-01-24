@@ -29,9 +29,11 @@
         <div class="container">
             <div class="row justify-content-center mt-3">
                 <div class="col-10">
-                    <div class="card mt-1">
-                        <div class="card-body" v-for="text in old_text">
-                            <span>{{ text }}</span>
+                    <div class="card mt-1" v-for="text in all_text">
+                        <div class="card-body" >
+                            <span> <strong>Original message: </strong>{{ text.actual_text }}</span>
+                            <br>
+                            <span> <strong>Decrypt message: </strong>{{ text.deCryptMessage }}</span>
                         </div>
                     </div>
                 </div>
