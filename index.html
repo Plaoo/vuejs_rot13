@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ROT 13 in Vue js</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="h1" style="text-align: center">ROT 13</div>
+
+    <div id="app">
+        <div class="row justify-content-center mt-3">
+            <form @submit.prevent="deCryptMessage">
+                <div class="form-group">
+                    <textarea class="form-control" cols="80" rows="10" v-model="message"></textarea>
+                </div>
+                <button class="btn btn-sm btn-primary" type="submit">Crypt</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <div class="card mt-1" v-for="text in all_text">
+                        <div class="card-body" >
+                            <span>{{ text }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
